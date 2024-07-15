@@ -1,0 +1,86 @@
+﻿@model PatientDto
+@{
+}
+
+
+<div class="row mb-3">
+    <div class="col rounded border p-3">
+        <h2 class=" text-center">Edit Patient</h2>
+
+        <form method="post" enctype="multipart/form-data">
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Id</label>
+                <div class="col-sm-4">
+                    <input class="form-control-plaintext" value="@ViewData["id"]"  />
+                   
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Name</label>
+                <div class="col-sm-4">
+                    <input class="form-control" asp-for="Name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Age</label>
+                <div class="col-sm-4">
+                    <input class="form-control" asp-for="Age" />
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Description</label>
+                <div class="col-sm-4">
+                    <select class="form-select" asp-for="Description">
+                        <option value="Admitted">Admitted</option>
+                        <option value="Discharged">Discharged</option>
+                        <option value="Critical">Critical</option>
+                        <option value="Deceased">Deceased</option>
+                        <option value="Stable">Stable</option>
+                        <option value="In Surgery">In Surgery</option>
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Due</label>
+                <div class="col-sm-4">
+                    <input class="form-control" asp-for="Due" />
+                    <span asp-validation-for="Due" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-4">
+                    <img src="/images/@ViewData["Image"]" width="100" />
+
+                </div>
+            </div>
+
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Image</label>
+                <div class="col-sm-4">
+                    <input class="form-control" asp-for="Image" />
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-4 d-grid">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="col-sm-4 d-grid">
+                    <a class="btn btn-outline-primary" asp-controller="Patients" asp-action="Index" role="button">Cancel</a>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</div>
